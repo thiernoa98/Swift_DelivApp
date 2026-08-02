@@ -2,22 +2,19 @@ import UIKit
 
 protocol Restaurant {
     var name: String{ get }
-//    we just declare the funtions here
     func prepareFood()
 }
-//class must have a name, here is AsianRestaurant
+
 class AsianRestaurant: Restaurant {
     let name: String
     init(name: String) {
         self.name = name
     }
-//    use function here if we have to
     func prepareFood() {
     }
 }
 class AfricanRestaurant: Restaurant {
     let name: String
-//    if we don't initiaze here, we must do it at the bottom
     init(name: String) {
         self.name = name
     }
@@ -26,7 +23,6 @@ class AfricanRestaurant: Restaurant {
 }
 
 protocol PaymentMethod {
-//    in protocol, we only declare
     func Pay(amount: Double)->Bool
 }
 
@@ -80,6 +76,5 @@ let orderPlacement = OrderPlacement(restaurant: asianRestaurant, paymentMethod: 
 
 //now call the function that should print
 orderPlacement.placeOrder(order: order){
-    //    this will print the value of placementMessage, it's known as a closure
     value in  print(value)
 }
